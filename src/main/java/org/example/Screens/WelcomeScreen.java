@@ -8,7 +8,7 @@ public class WelcomeScreen
 {
   public static void loadWelcomeScreen ()
   {
-      Raylib.clearBackground(Raylib.RAYWHITE);
+      Raylib.clearBackground(Raylib.BEIGE);
       String welcomeText = "Welcome To Algorithm Visualiser";
       int fontSize  = 30 ;
 
@@ -20,7 +20,7 @@ public class WelcomeScreen
       // Vector2 welcomeTextOffset = welcomeOffset.getPositionOffset();
       int x =    (int )  (screenWidth -textWidth) / 2 ;
       int y =    (int )  (screenHeight -  fontSize ) / 2;
-      Raylib.drawText(welcomeText, x ,y , fontSize, Raylib.DARKGRAY);
+      Raylib.drawText(welcomeText, x ,y , fontSize, Raylib.BROWN);
 
   }
 }
