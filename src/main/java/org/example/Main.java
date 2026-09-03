@@ -2,6 +2,10 @@ package org.example;
 
 import com.raylib.Raylib;
 import  com.raylib.Raylib.*;
+import com.raylib.Vector2;
+import org.example.Screens.WelcomeScreen;
+import org.example.utils.PositionOffset;
+
 
 public class Main {
     static void main() {
@@ -32,12 +36,15 @@ public class Main {
         Raylib.setWindowMaxSize(monitorWidth, monitorHeight);
 
         Raylib.setTargetFPS(60);
+//        System.out.println("The Monitor count is  : " + Raylib.getMonitorCount());
+//        System.out.println("The Current Monitor is    : " + Raylib.getCurrentMonitor());
+
 
         while (!Raylib.windowShouldClose())
         {
+
             Raylib.beginDrawing();
-             Raylib.clearBackground(Raylib.RAYWHITE);
-            Raylib.drawText("Algorithm Visualiser", windowWidth/2 - 100, windowHeight/2 - 20, 30, Raylib.DARKGRAY);
+            WelcomeScreen.loadWelcomeScreen();
             Raylib.endDrawing();
         }
 
