@@ -3,20 +3,17 @@ package org.example.utils;
 import  com.raylib.* ;
 public class PositionOffset
 {
-    private  Vector2 postionOffset  ;
+    private  Vector2 positionOffset  ;
 
-    public void PositionOffset(Vector2 postionOffset)
+    public  PositionOffset(Vector2 position)
     {
-        this.postionOffset = new Vector2(postionOffset.getX() , postionOffset.y());
+        this.positionOffset = new Vector2(position.getX() , position.y());
+        this.positionOffset.setX(position.x() / 2 )  ;
+        this.positionOffset.setY(position.y() / 2 );
     }
 
-    public void setOffset(Vector2 postionOffset)
+    public Vector2 getPositionOffset()
     {
-         this.postionOffset.setX(postionOffset.x() / 2 )  ;
-         this.postionOffset.setY(postionOffset.y() / 2 );  ;
-    }
-    public Vector2 getPostionOffset()
-    {
-        return this.postionOffset ;
+        return this.positionOffset ;
     }
 }
