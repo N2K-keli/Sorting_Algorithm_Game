@@ -39,12 +39,13 @@ public class Main {
 //        System.out.println("The Monitor count is  : " + Raylib.getMonitorCount());
 //        System.out.println("The Current Monitor is    : " + Raylib.getCurrentMonitor());
 
-
+        WelcomeScreen.loadWelcomeScreen();
         while (!Raylib.windowShouldClose())
         {
 
             Raylib.beginDrawing();
-            WelcomeScreen.loadWelcomeScreen();
+            // WelcomeScreen.loadWelcomeScreen();
+            WelcomeScreen.drawWelcomeScreen();
             Raylib.endDrawing();
         }
 
