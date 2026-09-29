@@ -78,14 +78,27 @@ public class WelcomeScreen
         Raylib.drawText(welcomeText, x, y, fontSize, Raylib.DARKBROWN);
     }
 
-    // Call ONCE, after the game loop and before closeWindow()
-    public static void unloadWelcomeScreen()
+    // Call when leaving this screen, before the next screen starts loading its own assets
+    public static void destroyWelcomeScreen()
     {
-        if (nutTexture != null)
+        if (nutTexture == null)
+        {
+            System.out.println("The welcome screen has no texture to destroy");
+            return;
+        }
+
+        if (!Raylib.isTextureValid(nutTexture))
+        {
+            System.out.println("The texture was already invalid, skipping the GPU unload");
+        }
+        else
         {
             Raylib.unloadTexture(nutTexture);
-            Raylib.clearBackground(Raylib.BLACK);
-
         }
+
+        nutTexture = null;
+        Raylib.clearBackground(Raylib.BLACK);
+
+        System.out.println("The welcome screen has been destroyed and the texture has been freed");
     }
 }
